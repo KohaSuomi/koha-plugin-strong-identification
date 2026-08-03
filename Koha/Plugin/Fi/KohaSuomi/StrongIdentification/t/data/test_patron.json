@@ -1,0 +1,35 @@
+[
+    {
+        "_id": 179736,
+        "_confirmationNumber": "7dd6b1cfbd",
+        "_timestamp": "2026-07-08 08:24:34",
+        "_formId": 2403,
+        "_formName": "FormBox - kirjastokorttihakemus",
+        "_language": "fi",
+        "_suomifiIdentification": {
+            "AuthenticatingAuthority": [
+                "https://tunnistautuminen.suomi.fi/idp1"
+            ],
+            "AuthnInstant": 1783488172,
+            "SessionIndex": "_fcabd840d29c984b2f7857db01a017da",
+            "AuthnContext": "http://ftn.ficora.fi/2017/loa2"
+        },
+        "etunimi": "Ky\u00f6sti Eerik",
+        "sukunimi": "Rasinm\u00e4ki",
+        "syntymaaika": "11.12.1962",
+        "kasittelyprosessi": "Valinnat 2",
+        "application_type": "SELF",
+        "firstname": "Ky\u00f6sti Eerik",
+        "surname": "Rasinm\u00e4ki",
+        "other_name": "Ky\u00f6sti",
+        "date_of_birth": "2000-01-01",
+        "address": "Testaajantie 1",
+        "postal_code": "80100",
+        "city": "Joensuu",
+        "email": "kyosti.rasinmaki@joensuu.fi",
+        "mobile": "0504735338",
+        "library_id": "Joensuun p\u00e4\u00e4kirjasto",
+        "lang": "fi-FI",
+        "kasittelySahkoposti": "kyosti.rasinmaki@joensuu.fi"
+    }
+]

@@ -7,6 +7,7 @@ use Modern::Perl;
 use base qw(Koha::Plugins::Base);
 ## We will also need to include any Koha libraries we want to access
 use C4::Context;
+use JSON::Validator::Schema::OpenAPIv2;
 use utf8;
 
 ## Here we set our plugin version
@@ -65,6 +66,23 @@ sub uninstall() {
     my ( $self, $args ) = @_;
 
     return 1;
+}
+
+sub api_routes {
+    my ( $self, $args ) = @_;
+
+    my $spec_dir = $self->mbf_dir();
+    my $spec_file = $spec_dir . '/openapi.yaml';
+
+    my $schema = JSON::Validator::Schema::OpenAPIv2->new;
+    $schema->resolve( $spec_file );
+    return $schema->bundle->data;
+}
+
+sub api_namespace {
+    my ( $self ) = @_;
+
+    return 'kohasuomi';
 }
 
 1;

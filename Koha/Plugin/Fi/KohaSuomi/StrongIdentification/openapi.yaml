@@ -1,0 +1,60 @@
+"/identification":
+  post:
+    x-mojo-to: "Fi::KohaSuomi::StrongIdentification::Controllers::IdentificationController#add"
+    operationId: addIdentifiedPatron
+    tags:
+      - patrons
+    summary: Add patron identified via suomi.fi
+    parameters:
+      - name: body
+        in: body
+        description: Patron JSON object
+        required: true
+        schema:
+          type: array
+    produces:
+      - application/json
+    responses:
+      "201":
+        description: A patron was added to database
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: Success message
+      "400":
+        description: Bad request
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              description: Invalid object
+      "403":
+        description: An error occured
+        schema:
+          type: object
+          properties:
+            error:
+              description: Forbidden
+              type: string
+      "404":
+        description: Data not found
+        schema:
+          type: object
+          properties:
+            error:
+              description: Error message
+              type: string
+      "500":
+        description: Internal server error
+        schema:
+          type: object
+          properties:
+            error:
+              type: string
+              description: Error message
+    x-koha-authorization:
+      permissions:
+        borrowers: edit_borrowers
