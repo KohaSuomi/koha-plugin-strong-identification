@@ -23,10 +23,7 @@ sub add_patron {
 
     my $libraries = _get_libraries();
 
-    # TO DO: We need a new patron category (following is dummy category)
-    # and a decision if we use syspref PatronSelfRegistrationDefaultCategory
-    # my $categorycode = C4::Context->preference("PatronSelfRegistrationDefaultCategory");
-    my $categorycode = "ITSEREK";
+    my $categorycode = C4::Context->preference("PatronSelfRegistrationDefaultCategory");
 
     my $patron_data = {
         surname        => $json->{surname},
